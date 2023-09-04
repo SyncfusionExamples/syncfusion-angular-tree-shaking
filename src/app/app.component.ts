@@ -1,8 +1,4 @@
-import { enableRipple } from '@syncfusion/ej2-base';
 import { Component } from '@angular/core';
-
-// enable ripple effects
-enableRipple(true);
 
 @Component({
   selector: 'app-root',
@@ -19,8 +15,8 @@ enableRipple(true);
       <e-column field='OrderDate' headerText='Order Date' textAlign='Right' format='yMd' width=120></e-column>
     </e-columns>
   </ejs-grid>
-  `
-})
+ `
+ })
 export class AppComponent {
   public data: Object[] = [
     {

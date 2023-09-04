@@ -1,35 +1,27 @@
-# Tree Shaking in Angular
+# SyncfusionAngularApp
 
-Tree shaking in Angular eliminates unused modules from the final bundle file, reducing download size and improving performance. The Angular CLI uses Webpack, which supports tree shaking from version 2. Understanding tree shaking helps optimize application performance.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
-## Using Syncfusion Angular component with Tree Shaking
+## Development server
 
-By default, Syncfusion Angular components supports Tree Shaking and it dose not require any special changes in application level.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Implementing Tree Shaking in an Angular Application
+## Code scaffolding
 
-Here are the steps for enabling Tree Shaking in an Angular application,
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-1. Create an Angular application with Syncfusion EJ2 Angular components as described in the [Getting Started](../getting-started/angular-cli/) documentation using the [Angular CLI](https://cli.angular.io/).
+## Build
 
-2. Run the `ng build --prod` or `ng serve --prod` command to build or serve the application with Tree Shaking enabled.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-A sample code snippet that shows how to enable Tree Shaking in the `angular.json` configuration file,
+## Running unit tests
 
-    ```json
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-    "configurations": {
-        "production": {
-            "optimization": true,
-            "sourceMap": false,
-            "namedChunks": false,
-            "aot": true,
-            "extractLicenses": true,
-            "vendorChunk": false,
-            "buildOptimizer": true
-        }
-    },
+## Running end-to-end tests
 
-    ```
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-You can enhance the user experience and boost performance in your Angular application by following the steps above and implementing tree shaking.
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
