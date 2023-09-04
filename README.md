@@ -1,27 +1,21 @@
-# SyncfusionAngularApp
+# Tree Shaking in Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+The Angular CLI relies on the Webpack bundler to manage and bundle your application's code. Starting from version 2, Webpack introduced full-fledged support for tree shaking. As a result, when you build your Angular application using the Angular CLI, Webpack analyzes your codebase and automatically removes any unreachable or unused code segments.
 
-## Development server
+## Using Syncfusion with Tree Shaking
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Syncfusion Angular components seamlessly support Tree Shaking by default, eliminating the need for any special modifications at the application level. Tree Shaking is a powerful technique that reduces the size of your application's bundle by removing unused code modules. This leads to faster load times and better overall performance.
 
-## Code scaffolding
+## Implementing Tree Shaking in an Angular Application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Enabling Tree Shaking in your Angular application, especially when utilizing Syncfusion EJ2 Angular components, is a straightforward process that can significantly enhance your application's efficiency.
 
-## Build
+### Steps to Enable Tree Shaking
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Follow these steps to enable Tree Shaking in your Angular application,
 
-## Running unit tests
+1. Create an Angular Application with Syncfusion Components: Begin by setting up your Angular application with Syncfusion EJ2 Angular components. You can find detailed instructions on how to integrate Syncfusion components into your application in the [Getting Started](../getting-started/angular-cli/) documentation using the [Angular CLI](https://cli.angular.io/).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Build or Serve with Tree Shaking: Once your application is configured with Syncfusion components, you can enable Tree Shaking by building or serving the application with production settings. Run the `ng build --configuration=production` or `ng serve --configuration=production` command to build or serve the application with Tree Shaking enabled.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+By adhering to these steps and integrating tree shaking into your Angular application, you can significantly enhance performance and elevate the user experience.
