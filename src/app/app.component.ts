@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { GridModule, PageSettingsModel } from '@syncfusion/ej2-angular-grids';
+import { PageService, SortService, FilterService, GroupService } from '@syncfusion/ej2-angular-grids';
+
 
 @Component({
   selector: 'app-root',
-  template: `
-  <h1>
-    Syncfusion Angular UI Grid!
-  </h1>
-
-  <ejs-grid [dataSource]='data'>
-    <e-columns>
-      <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=90></e-column>
-      <e-column field='CustomerID' headerText='Customer ID' width=120></e-column>
-      <e-column field='Freight' headerText='Freight' textAlign='Right' format='C2' width=90></e-column>
-      <e-column field='OrderDate' headerText='Order Date' textAlign='Right' format='yMd' width=120></e-column>
-    </e-columns>
-  </ejs-grid>
- `
- })
+  standalone: true,
+  providers: [PageService, SortService, FilterService, GroupService],
+  imports: [GridModule, CommonModule, RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
 export class AppComponent {
-  public data: Object[] = [
+  title = 'Syncfusion-Angular-Tree-Shaking';
+  public data: Object[] = 
+  [
     {
       OrderID: 10248, CustomerID: 'VINET', EmployeeID: 5, OrderDate: new Date(8364186e5),
       ShipName: 'Vins et alcools Chevalier', ShipCity: 'Reims', ShipAddress: '59 rue de l Abbaye',
@@ -35,4 +33,5 @@ export class AppComponent {
       ShipRegion: 'RJ', ShipPostalCode: '05454-876', ShipCountry: 'Brazil', Freight: 65.83, Verified: !0
     }
   ];
+  public pageSettings?: PageSettingsModel = { pageSize: 6 };
 }
