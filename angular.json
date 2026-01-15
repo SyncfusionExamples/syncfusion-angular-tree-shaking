@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "syncfusion-angular-app": {
+    "Syncfusion-Angular-Tree-Shaking": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,11 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/syncfusion-angular-app",
+            "outputPath": "dist/syncfusion-angular-tree-shaking",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -25,25 +25,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "optimization": true,
-              "sourceMap": false,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "6mb",
-                  "maximumError": "6mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -51,15 +43,17 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,              
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -68,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "syncfusion-angular-app:build:production"
+              "buildTarget": "Syncfusion-Angular-Tree-Shaking:build:production"
             },
             "development": {
-              "browserTarget": "syncfusion-angular-app:build:development"
+              "buildTarget": "Syncfusion-Angular-Tree-Shaking:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "syncfusion-angular-app:build"
+            "buildTarget": "Syncfusion-Angular-Tree-Shaking:build"
           }
         },
         "test": {
@@ -95,16 +89,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
+              "src/styles.css"
             ],
             "scripts": []
           }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "ec65ef7b-4313-4c7f-9d42-d3587151da1b"
   }
 }
