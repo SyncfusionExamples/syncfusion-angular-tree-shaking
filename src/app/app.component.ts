@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { GridModule, PagerModule } from '@syncfusion/ej2-angular-grids';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [GridModule, PagerModule],
   template: `
   <h1>
     Syncfusion Angular UI Grid!
